@@ -7,7 +7,7 @@ before_install:
 
 script:
     # - docker run danny2327/react-test npm test -- --coverage
-    - docker run -e CI=true USERNAME/react-test npm test
+    - docker run -e CI=true danny2327/react-test npm test
 after_success:
     - docker build -t danny2327/multi-client ./client 
     - docker build -t danny2327/multi-nginx ./nginx 
@@ -19,4 +19,4 @@ after_success:
     - docker push danny2327/multi-client 
     - docker push danny2327/multi-nginx
     - docker push danny2327/multi-server 
-    - docker push danny2327/multi-worker 
+    - docker push danny2327/multi-worker  
